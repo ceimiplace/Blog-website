@@ -4,6 +4,7 @@ import MainContainer from "./MainContentContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateBlog from "./CreateBlog";
 import FullBlogDetails from "./FullBlogDetails.js";
+import Page404 from "./Page404";
 export default function App2() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ export default function App2() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<CreateBlog />} />
             <Route path="/blogs/:id" element={<FullBlogDetails />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </MainContainer>
       </div>
