@@ -12,6 +12,7 @@ export default function Home() {
       .collection("recipies")
       .get()
       .then((snapshot) => {
+        console.log(snapshot);
         snapshot.docs.forEach((elem) =>
           results.push({ id: elem.id, ...elem.data() })
         );
