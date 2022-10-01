@@ -7,7 +7,7 @@ export default function CreateBlog() {
   const [body, setText] = useState("");
   const [name, setName] = useState("");
   return (
-    <div className="w-3/4 border-2 border-slate-400 mx-auto p-4">
+    <div className="w-3/4  mx-auto p-4">
       <h2 className="text-3xl font-medium text-center">Add new log</h2>
       <form
         className="text-lg font-meidum "
@@ -48,11 +48,11 @@ export default function CreateBlog() {
           <label>Blog Author:</label>
           <input
             onChange={(e) => setName(e.target.value)}
-            className="block border-2 border-400-slate w-full"
+            className="block border-2 border-400-slate w-full mb-2"
             type="text"
             required
           />
-          <button>Submit blog</button>
+          <button className="bg-slate-200 rounded p-2">Submit blog</button>
         </div>
       </form>
     </div>

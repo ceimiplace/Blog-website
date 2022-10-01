@@ -12,12 +12,12 @@ export default function Home() {
       .collection("recipies")
       .get()
       .then((snapshot) => {
-        console.log(snapshot);
-        snapshot.docs.forEach((elem) =>
-          results.push({ id: elem.id, ...elem.data() })
-        );
+        console.log(snapshot.docs);
+        snapshot.docs
+          .reverse()
+          .forEach((elem) => results.push({ id: elem.id, ...elem.data() }));
         setLoading(false);
-        setBlogsToDisplay(results.reverse());
+        setBlogsToDisplay(results);
       })
       .catch((error) => {
         setError(error.message);
