@@ -1,5 +1,5 @@
 import BlogPreview from "./BlogPreview";
-export default function BlogRenderer({ blogsToDisplay, message }) {
+export default function BlogRenderer({ blogsToDisplay }) {
   let blogsList;
   if (blogsToDisplay) {
     blogsList = blogsToDisplay.map((blog) => {
@@ -16,9 +16,11 @@ export default function BlogRenderer({ blogsToDisplay, message }) {
   }
 
   return (
-    <>
-      <div className="text-2xl font-medium text-rose-500">{message}</div>
-      {blogsToDisplay && <div>{blogsList}</div>}
-    </>
+    blogsList && (
+      <div>
+        <div className="text-2xl font-medium text-rose-500">All blogs</div>
+        <div>{blogsList}</div>
+      </div>
+    )
   );
 }

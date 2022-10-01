@@ -26,9 +26,9 @@ export default function Home() {
   return (
     <>
       {error && <div>{error}</div>}
-      {loading && <Loader />}
 
-      <BlogRenderer blogsToDisplay={blogsToDisplay} message={"All Blogs"} />
+      <BlogRenderer blogsToDisplay={blogsToDisplay} />
+      {loading && <Loader />}
     </>
   );
 }
