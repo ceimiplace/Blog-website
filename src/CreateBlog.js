@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { projectFirestore } from "./firebase/config";
 import Loader from "./Loader";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateBlog() {
+  const [message, setMessage] = useState("Submit");
   const [title, setTitle] = useState("");
   const [body, setText] = useState("");
   const [name, setName] = useState("");
+  const navigate = useNavigate();
   return (
     <div className="w-3/4  mx-auto p-4">
       <h2 className="text-3xl font-medium text-center">Add new log</h2>
@@ -52,7 +55,17 @@ export default function CreateBlog() {
             type="text"
             required
           />
-          <button className="bg-slate-200 rounded p-2">Submit blog</button>
+          <button
+            onClick={() => {
+              setMessage("...Redirecting");
+              setTimeout(() => {
+                navigate("/");
+              }, 1000);
+            }}
+            className="bg-slate-200 rounded p-2"
+          >
+            {message}
+          </button>
         </div>
       </form>
     </div>
