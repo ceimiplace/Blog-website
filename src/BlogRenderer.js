@@ -10,6 +10,8 @@ export default function BlogRenderer({ blogsToDisplay }) {
           title={blog.title}
           name={blog.name}
           picture={blog.picture}
+          body={blog.body}
+          date={blog.date}
         />
       );
     });

@@ -10,14 +10,17 @@ export default function Home() {
     let results = [];
     projectFirestore
       .collection("recipies")
+      .orderBy("date")
+
       .get()
+
       .then((snapshot) => {
         console.log(snapshot.docs);
-        snapshot.docs
-          .reverse()
-          .forEach((elem) => results.push({ id: elem.id, ...elem.data() }));
+        snapshot.docs.forEach((elem) =>
+          results.push({ id: elem.id, ...elem.data() })
+        );
         setLoading(false);
-        setBlogsToDisplay(results);
+        setBlogsToDisplay(results.reverse());
       })
       .catch((error) => {
         setError(error.message);

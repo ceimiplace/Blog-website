@@ -21,6 +21,7 @@ export default function CreateBlog() {
             body,
             name,
             picture: `https://robohash.org/${name}.png`,
+            date: new Date().toLocaleString(),
           };
           try {
             projectFirestore.collection("recipies").add(doc);
