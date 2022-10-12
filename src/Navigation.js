@@ -13,9 +13,6 @@ export default function Navigation() {
         >
           Create Blog
         </Link>
-        <Link className="" to="/about">
-          About
-        </Link>
       </div>
     </nav>
   );
