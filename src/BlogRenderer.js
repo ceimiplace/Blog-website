@@ -2,6 +2,7 @@ import BlogPreview from "./BlogPreview";
 export default function BlogRenderer({ blogsToDisplay }) {
   let blogsList;
   if (blogsToDisplay) {
+    console.log(blogsList);
     blogsList = blogsToDisplay.map((blog) => {
       return (
         <BlogPreview

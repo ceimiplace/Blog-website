@@ -11,9 +11,7 @@ export default function Home() {
     projectFirestore
       .collection("recipies")
       .orderBy("date")
-
       .get()
-
       .then((snapshot) => {
         console.log(snapshot.docs);
         snapshot.docs.forEach((elem) =>
@@ -21,6 +19,7 @@ export default function Home() {
         );
         setLoading(false);
         setBlogsToDisplay(results.reverse());
+        console.log(results);
       })
       .catch((error) => {
         setError(error.message);
